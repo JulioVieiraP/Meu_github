@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
             seguindo.innerText = json.following
             link.href = json.html_url
         }catch(error){
-            alert("Aconteceu um error volte novamente outra hora")
+            alert("Aconteceu um error no json")
         }
     })
     
