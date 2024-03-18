@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch('https://api.github.com/users/JulioVieiraP')
     .then(function (resposta) {
-        if (!resposta.ok) {
+        if (resposta.ok === false) {
             throw new Error(`HTTP error! status: ${resposta.status}`);
         }
         return resposta.json()
