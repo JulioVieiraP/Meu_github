@@ -12,15 +12,17 @@ document.addEventListener("DOMContentLoaded", function(){
         return resposta.json()
     })
     .then(function(json) {
-        avatar.src = json.avatar_url
-        perfilName.innerText = json.name
-        perfilUserName.innerText= json.login
-        repositórios.innerText  = json.public_repos
-        seguidores.innerText = json.followers
-        seguindo.innerText = json.following
-        link.href = json.html_url
+        try{
+            avatar.src = json.avatar_url
+            perfilName.innerText = json.name
+            perfilUserName.innerText= json.login
+            repositórios.innerText  = json.public_repos
+            seguidores.innerText = json.followers
+            seguindo.innerText = json.following
+            link.href = json.html_url
+        }catch(error){
+            alert("Aconteceu um error volte novamente outra hora")
+        }
     })
-    .catch(function(error){
-        alert("Aconteceu um error volte novamente outra hora")
-    })
+    
 })
