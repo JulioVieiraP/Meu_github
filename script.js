@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", function(){
         perfilName.innerText = json.name
         perfilUserName.innerText= json.login
         repositórios.innerText  = json.public_repos
-        seguidores.innerText = json.following
-        seguindo.innerText = json.followers
+        seguidores.innerText = json.followers
+        seguindo.innerText = json.following
         link.href = json.html_url
     })
-    
-    
+    .catch(function(error){
+        alert("Aconteceu um error volte novamente outra hora")
+    })
 })
