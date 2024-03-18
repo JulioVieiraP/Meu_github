@@ -57,6 +57,10 @@ header .container {
     text-decoration: none;
 }
 
+.profile-link:hover{
+    opacity: .7;
+}
+
 .numbers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
