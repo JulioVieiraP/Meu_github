@@ -9,20 +9,21 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch('https://api.github.com/users/JulioVieiraP')
     .then(function (resposta) {
+        if (!resposta.ok) {
+            throw new Error(`HTTP error! status: ${resposta.status}`);
+        }
         return resposta.json()
     })
     .then(function(json) {
-        try{
-            avatar.src = json.avatar_url
-            perfilName.innerText = json.name
-            perfilUserName.innerText= json.login
-            repositórios.innerText  = json.public_repos
-            seguidores.innerText = json.followers
-            seguindo.innerText = json.following
-            link.href = json.html_url
-        }catch(error){
-            alert("Aconteceu um error no json")
-        }
+        avatar.src = json.avatar_url
+        perfilName.innerText = json.name
+        perfilUserName.innerText= json.login
+        repositórios.innerText  = json.public_repos
+        seguidores.innerText = json.followers
+        seguindo.innerText = json.following
+        link.href = json.html_url
     })
-    
+    .catch(function(error){
+       alert("Aconteceu um erro no serviço", error);
+    })
 })
